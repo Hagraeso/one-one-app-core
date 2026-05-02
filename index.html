@@ -2,45 +2,112 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>One One App Preview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One One | One Post. One Day.</title>
     <style>
-        body { background: #0A0A0A; color: #E8E6E1; font-family: 'Georgia', serif; display: flex; justify: center; padding: 20px; }
-        .app-container { max-width: 390px; width: 100%; background: #111; border: 1px solid #1E1E1E; border-radius: 30px; padding: 20px; margin: auto; }
-        header { text-align: center; border-bottom: 1px solid #1A1A1A; padding-bottom: 20px; }
-        .logo { font-size: 24px; letter-spacing: 2px; margin: 0; }[span_0](start_span)[span_0](end_span)
-        .tagline { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 2px; }[span_1](start_span)[span_1](end_span)
-        .date { font-size: 11px; color: #C8A96E; margin-top: 15px; text-transform: uppercase; }[span_2](start_span)[span_2](end_span)
-        .post { background: #161616; border-radius: 16px; padding: 15px; margin-top: 20px; border: 1px solid #222; }[span_3](start_span)[span_3](end_span)
-        .btn-group { display: flex; gap: 10px; margin-top: 15px; }
-        button { flex: 1; padding: 10px; border-radius: 20px; cursor: pointer; font-family: 'Georgia'; font-size: 12px; transition: 0.3s; }
-        .btn-interested { background: transparent; border: 1px solid #C8A96E; color: #C8A96E; }
-        .btn-interested:hover { background: #C8A96E; color: #000; }
-        .btn-pass { background: transparent; border: 1px solid #333; color: #666; }
-        .footer-msg { font-size: 11px; color: #444; text-align: center; margin-top: 30px; }[span_4](start_span)[span_4](end_span)
+        :root {
+            --primary-color: #004d5c; /* اللون المستوحى من اللوجو image_3.png */
+            --bg-color: #0A0A0A;
+            --text-color: #E8E6E1;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Georgia', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo-container img {
+            max-width: 200px; /* هنا نضع اللوجو image_3.png */
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        p.tagline {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #888;
+            max-width: 400px;
+            line-height: 1.6;
+        }
+
+        .waitlist-form {
+            margin-top: 40px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        input[type="email"] {
+            width: 70%;
+            padding: 12px;
+            border-radius: 25px 0 0 25px;
+            border: 1px solid #333;
+            background: #111;
+            color: white;
+            outline: none;
+        }
+
+        button {
+            width: 25%;
+            padding: 12px;
+            border-radius: 0 25px 25px 0;
+            border: none;
+            background: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .footer {
+            margin-top: 60px;
+            font-size: 0.8rem;
+            color: #444;
+            letter-spacing: 1px;
+        }
     </style>
 </head>
 <body>
-    <div class="app-container">
-        <header>
-            <h1 class="logo">one one</h1>[span_5](start_span)[span_5](end_span)
-            <div class="tagline">one post • one day</div>[span_6](start_span)[span_6](end_span)
-            <div class="date">Saturday, May 2</div>[span_7](start_span)[span_7](end_span)
-        </header>
-        
-        <div class="post">
-            <div style="font-size: 10px; color: #C8A96E; margin-bottom: 5px;">BOOK SELECTION</div>[span_8](start_span)[span_8](end_span)
-            <div style="font-size: 16px; margin-bottom: 8px;">The Remains of the Day</div>[span_9](start_span)[span_9](end_span)
-            <div style="font-size: 13px; color: #888; font-style: italic;">"A quiet book about regret. Read it slowly."</div>[span_10](start_span)[span_10](end_span)
-            
-            <div class="btn-group">
-                <button class="btn-interested">Interested</button>
-                <button class="btn-pass">Pass</button>
-            </div>
-        </div>
 
-        <div class="footer-msg">
-            You've shared your value for today.<br>Come back tomorrow.[span_11](start_span)[span_11](end_span)
-        </div>
+    <div class="logo-container">
+        <!-- تأكد أن ملف اللوجو image_3.png موجود في نفس المجلد على GitHub -->
+        <img src="image_3.png" alt="One One Logo"> 
     </div>
+
+    <h1>One One</h1>
+    <p class="tagline">"The digital sanctuary for deep connections. One meaningful post, once a day."</p>
+
+    <div class="waitlist-form">
+        <form>
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Join</button>
+        </form>
+        <p style="font-size: 0.7rem; color: #555; margin-top: 10px;">Be the first to experience it in Malmö.</p>
+    </div>
+
+    <div class="footer">
+        © 2026 ONE ONE. ALL RIGHTS RESERVED.
+    </div>
+
 </body>
 </html>
