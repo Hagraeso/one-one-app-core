@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,75 +7,58 @@
     <style>
         :root {
             --primary-color: #004d5a; 
-            --bg-color: #f4f4f4;
-            --text-color: #1a1a1a;
+            --bg-color: #f8f9fa;
+            --text-color: #2d3436;
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
             text-align: center;
-            padding: 20px;
         }
-        .container { max-width: 500px; width: 100%; }
+        .container { max-width: 450px; width: 90%; padding: 20px; }
         
-        /* تنسيق اللوجو الجديد */
-        .logo {
-            max-width: 180px; /* يمكنك تكبير أو تصغير اللوجو من هنا */
-            height: auto;
-            margin-bottom: 20px;
+        /* استبدال اللوجو المفقود بنص أنيق حتى ترفع الصورة */
+        .logo { 
+            font-size: 2.5rem; 
+            font-weight: 800; 
+            color: var(--primary-color); 
+            letter-spacing: -1px;
+            margin-bottom: 10px;
         }
 
-        .tagline { font-size: 1.2rem; margin-bottom: 30px; color: #555; }
+        .tagline { font-size: 1.1rem; color: #636e72; margin-bottom: 30px; }
         
         .stats-box { 
-            background: #e2e2e2; 
-            padding: 12px 20px; 
-            border-radius: 12px; 
+            background: #dfe6e9; 
+            padding: 12px; 
+            border-radius: 10px; 
             margin-bottom: 25px; 
-            font-size: 0.95rem;
-            color: #333;
+            font-size: 0.9rem;
         }
 
         input[type="email"] { 
-            padding: 16px; 
-            border: 1px solid #ccc; 
-            border-radius: 10px; 
-            font-size: 1rem; 
-            width: 100%; 
-            box-sizing: border-box; 
-            margin-bottom: 12px;
-            background: white;
-            text-align: center;
+            padding: 15px; border: 1px solid #dfe6e9; border-radius: 8px; 
+            font-size: 1rem; width: 100%; box-sizing: border-box; margin-bottom: 10px;
         }
 
         button { 
-            padding: 16px; 
-            background-color: var(--primary-color); 
-            color: white; 
-            border: none; 
-            border-radius: 10px; 
-            cursor: pointer; 
-            font-size: 1.1rem; 
-            font-weight: 600; 
-            width: 100%;
-            transition: 0.3s;
+            padding: 15px; background-color: var(--primary-color); color: white; 
+            border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; 
+            font-weight: 600; width: 100%; transition: 0.2s;
         }
         button:hover { background-color: #003a44; }
 
-        .features { margin-top: 40px; text-align: right; }
+        .features { margin-top: 40px; text-align: left; }
         .feature-item { 
-            margin-bottom: 15px; 
-            padding-right: 15px; 
-            border-right: 3px solid var(--primary-color);
-            font-size: 1rem;
-            line-height: 1.5;
+            margin-bottom: 15px; padding-left: 15px; 
+            border-left: 3px solid var(--primary-color);
+            font-size: 0.95rem;
         }
         strong { color: var(--primary-color); }
     </style>
@@ -83,13 +66,11 @@
 <body>
 
     <div class="container">
-        <!-- استبدال النص بصورة اللوجو -->
-        <img src="logo.png" alt="One One Logo" class="logo">
-        
+        <div class="logo">ONE ONE</div>
         <p class="tagline">One post. One day. One you.</p>
         
         <div class="stats-box">
-            Join the first 1,000 founding members. <strong>842 joined so far.</strong>
+            Join the first 1,000 founding members. <b>842 joined so far.</b>
         </div>
 
         <form>
@@ -113,9 +94,7 @@
 </body>
 </html>
 
+           
           
-          
-       
-
-
-    
+   
+        
