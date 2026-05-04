@@ -6,7 +6,7 @@
     <title>One One | Digital Sanctuary</title>
     <style>
         :root {
-            --primary-color: #004d5a; /* اللون الموجود في الصورة image_10.png */
+            --primary-color: #004d5a; 
             --bg-color: #f4f4f4;
             --text-color: #1a1a1a;
         }
@@ -24,7 +24,14 @@
             padding: 20px;
         }
         .container { max-width: 500px; width: 100%; }
-        h1 { font-size: 3.5rem; letter-spacing: 2px; color: var(--primary-color); margin-bottom: 5px; margin-top: 0; }
+        
+        /* تنسيق اللوجو الجديد */
+        .logo {
+            max-width: 180px; /* يمكنك تكبير أو تصغير اللوجو من هنا */
+            height: auto;
+            margin-bottom: 20px;
+        }
+
         .tagline { font-size: 1.2rem; margin-bottom: 30px; color: #555; }
         
         .stats-box { 
@@ -45,6 +52,7 @@
             box-sizing: border-box; 
             margin-bottom: 12px;
             background: white;
+            text-align: center;
         }
 
         button { 
@@ -75,11 +83,13 @@
 <body>
 
     <div class="container">
-        <h1>ONE ONE</h1>
-        <p class="tagline">One post. One day. One you.[span_1](start_span)[span_1](end_span)</p>
+        <!-- استبدال النص بصورة اللوجو -->
+        <img src="logo.png" alt="One One Logo" class="logo">
+        
+        <p class="tagline">One post. One day. One you.</p>
         
         <div class="stats-box">
-            Join the first 1,000 founding members. <strong>842 joined so far.</strong>[span_2](start_span)[span_2](end_span)
+            Join the first 1,000 founding members. <strong>842 joined so far.</strong>
         </div>
 
         <form>
@@ -89,13 +99,13 @@
 
         <div class="features">
             <div class="feature-item">
-                <strong>1 post per day:</strong> Think before you share.[span_3](start_span)[span_3](end_span)
+                <strong>1 post per day:</strong> Think before you share.
             </div>
             <div class="feature-item">
-                <strong>Required context:</strong> Why does this matter today?[span_4](start_span)[span_4](end_span)
+                <strong>Required context:</strong> Why does this matter today?
             </div>
             <div class="feature-item">
-                <strong>Meaningful reactions:</strong> Interested, Inspired, Will Try.[span_5](start_span)[span_5](end_span)
+                <strong>Meaningful reactions:</strong> Interested, Inspired, Will Try.
             </div>
         </div>
     </div>
@@ -103,6 +113,9 @@
 </body>
 </html>
 
+          
+          
+       
 
 
     
