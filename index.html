@@ -23,13 +23,11 @@
         }
         .container { max-width: 450px; width: 90%; padding: 20px; }
         
-        /* استبدال اللوجو المفقود بنص أنيق حتى ترفع الصورة */
-        .logo { 
-            font-size: 2.5rem; 
-            font-weight: 800; 
-            color: var(--primary-color); 
-            letter-spacing: -1px;
-            margin-bottom: 10px;
+        /* ضبط مقاس اللوجو */
+        .logo-img { 
+            width: 150px; 
+            height: auto; 
+            margin-bottom: 20px;
         }
 
         .tagline { font-size: 1.1rem; color: #636e72; margin-bottom: 30px; }
@@ -45,6 +43,7 @@
         input[type="email"] { 
             padding: 15px; border: 1px solid #dfe6e9; border-radius: 8px; 
             font-size: 1rem; width: 100%; box-sizing: border-box; margin-bottom: 10px;
+            text-align: center;
         }
 
         button { 
@@ -66,7 +65,9 @@
 <body>
 
     <div class="container">
-        <div class="logo">ONE ONE</div>
+        <!-- ربط اللوجو الفعلي -->
+        <img src="image_3.png" alt="One One Logo" class="logo-img">
+        
         <p class="tagline">One post. One day. One you.</p>
         
         <div class="stats-box">
@@ -80,13 +81,13 @@
 
         <div class="features">
             <div class="feature-item">
-                <strong>1 post per day:</strong> Think before you share.
+                * **1 post per day**: Think before you share.
             </div>
             <div class="feature-item">
-                <strong>Required context:</strong> Why does this matter today?
+                * **Required context**: Why does this matter today?
             </div>
             <div class="feature-item">
-                <strong>Meaningful reactions:</strong> Interested, Inspired, Will Try.
+                * **Meaningful reactions**: Interested, Inspired, Will Try.
             </div>
         </div>
     </div>
@@ -94,7 +95,8 @@
 </body>
 </html>
 
-           
-          
+      
+      
+
    
         
