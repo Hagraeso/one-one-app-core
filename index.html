@@ -152,19 +152,32 @@ function submitEmail() {
         return;
     }
 
+    function submitEmail() {
+    const email = document.getElementById("emailInput").value;
+
+    if (!email) {
+        alert("Please enter your email");
+        return;
+    }
+
     fetch("https://hooks.zapier.com/hooks/catch/27472410/uvxw2rt/", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({ email: email })
     })
-    .then(() => {
-        alert("You're on the waitlist!");
-        document.getElementById("emailInput").value = "";
+    .then(response => {
+        if (response.ok) {
+            alert("You're on the waitlist! 🎉");
+            document.getElementById("emailInput").value = "";
+        } else {
+            alert("Something went wrong. Try again.");
+        }
     })
     .catch(() => {
-        alert("Something went wrong. Try again.");
+        alert("Network error. Please try again later.");
     });
 }
+
 </script>
 
 </body>
