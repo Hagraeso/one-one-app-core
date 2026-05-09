@@ -1,206 +1,204 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OneOne | Intentional Expression</title>
 
-    <style>
-        :root {
-            --primary: #004F4F;
-            --bg: #F8F9FA;
-            --text: #1A1A1A;
-            --subtext: #555;
-        }
+```
+<style>
+    :root {
+        --primary: #004F4F;
+        --bg: #F8F9FA;
+        --text: #1A1A1A;
+        --subtext: #555;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg);
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: var(--text);
-            text-align: center;
-        }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background-color: var(--bg);
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        color: var(--text);
+        text-align: center;
+    }
 
-        .container {
-            max-width: 450px;
-            width: 90%;
-            padding: 20px;
-        }
+    .container {
+        max-width: 450px;
+        width: 90%;
+        padding: 20px;
+    }
 
-        /* Logo */
-        .logo-img {
-            width: 200px; /* ← تكبير اللوجو */
-            height: auto;
-            margin-bottom: 30px;
-        }
+    .logo-img {
+        width: 200px;
+        height: auto;
+        margin-bottom: 30px;
+    }
 
-        /* Headings */
-        h1 {
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
+    h1 {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: var(--primary);
+    }
 
-        .subtitle {
-            font-size: 17px;
-            color: var(--subtext);
-            margin-bottom: 30px;
-        }
+    .subtitle {
+        font-size: 17px;
+        color: var(--subtext);
+        margin-bottom: 30px;
+    }
 
-        /* Founding box */
-        .founding-box {
-            background-color: #E3E8E8;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
+    .founding-box {
+        background-color: #E3E8E8;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
 
-        /* Input + Button */
-        input[type="email"] {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #DADADA;
-            border-radius: 8px;
-            font-size: 15px;
-            margin-bottom: 12px;
-            text-align: center;
-            background-color: white;
-        }
+    input[type="email"] {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #DADADA;
+        border-radius: 8px;
+        font-size: 15px;
+        margin-bottom: 12px;
+        text-align: center;
+        background-color: white;
+        box-sizing: border-box;
+    }
 
-        button {
-            width: 100%;
-            padding: 15px;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
-        }
+    button {
+        width: 100%;
+        padding: 15px;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s;
+    }
 
-        button:hover {
-            background-color: #003A3A;
-        }
+    button:hover { background-color: #003A3A; }
+    button:disabled { background-color: #888; cursor: not-allowed; }
 
-        /* Features */
-        .features {
-            text-align: left;
-            margin-top: 35px;
-        }
+    .features {
+        text-align: left;
+        margin-top: 35px;
+    }
 
-        .feature-item {
-            margin-bottom: 15px;
-            padding-left: 12px;
-            border-left: 3px solid var(--primary);
-            font-size: 15px;
-        }
+    .feature-item {
+        margin-bottom: 15px;
+        padding-left: 12px;
+        border-left: 3px solid var(--primary);
+        font-size: 15px;
+    }
 
-        .feature-item strong {
-            color: var(--primary);
-        }
-    </style>
+    .feature-item strong { color: var(--primary); }
+
+    .success-box {
+        background-color: #E3FCEC;
+        color: #004F4F;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 15px;
+        font-weight: 600;
+        transition: opacity 0.3s ease;
+    }
+</style>
+```
+
 </head>
 
 <body>
-
 <div class="container">
 
-    <!-- Logo -->
-    <img src="image_3.png" alt="OneOne Logo" class="logo-img">
+```
+<img src="image_3.png" alt="OneOne Logo" class="logo-img">
 
-    <h1>One post. One day. Make it count.</h1>
-    <p class="subtitle">A platform for daily intentional expression.</p>
+<h1>One post. One day. Make it count.</h1>
+<p class="subtitle">A platform for daily intentional expression.</p>
 
-    <div class="founding-box">
-        Join the first 1,000 founding members. <b>Be among the first to shape this.</b>
+<div class="founding-box">
+    Join the first 1,000 founding members. <b>Be among the first to shape this.</b>
+</div>
+
+<input id="emailInput" type="email" placeholder="Enter your email to join the movement" required>
+<button id="submitBtn" onclick="submitEmail()">Join the Waitlist</button>
+
+<div class="features">
+    <div class="feature-item">
+        <strong>1 post per day</strong> — You think before you share.
     </div>
-
-    <input id="emailInput" type="email" placeholder="Enter your email to join the movement" required>
-    <button onclick="submitEmail()">Join the Waitlist</button>
-
-    <div class="features">
-        <div class="feature-item">
-            <strong>1 post per day</strong> — You think before you share.
-        </div>
-        <div class="feature-item">
-            <strong>Required context</strong> — Why does this matter today?
-        </div>
-        <div class="feature-item">
-            <strong>Meaningful reactions</strong> — Interested, Useful, Inspired, Will Try.
-        </div>
-        <div class="feature-item">
-            <strong>Identity over time</strong> — Your daily choices become your archive.
-        </div>
+    <div class="feature-item">
+        <strong>Required context</strong> — Why does this matter today?
     </div>
+    <div class="feature-item">
+        <strong>Meaningful reactions</strong> — Interested, Useful, Inspired, Will Try.
+    </div>
+    <div class="feature-item">
+        <strong>Identity over time</strong> — Your daily choices become your archive.
+    </div>
+</div>
+```
 
 </div>
 
 <script>
 function submitEmail() {
     const email = document.getElementById("emailInput").value.trim();
+    const btn = document.getElementById("submitBtn");
 
     if (!email) {
         alert("Please enter your email");
         return;
     }
 
-    // إرسال الإيميل إلى Zapier Webhook
+    // Disable button while sending
+    btn.disabled = true;
+    btn.textContent = "Joining...";
+
     fetch("https://hooks.zapier.com/hooks/catch/27472410/uvxw2rt/", {
-    method: "POST",
-    mode: "no-cors",
-    headers: {"Content-Type": "text/plain"},
-    body: JSON.stringify({ email: email })
-})
-.then(() => {
-    // Show success always - data is being received
-    showSuccess();
-})
-.catch(() => {
-    showSuccess(); // Still show success, Zapier got the data
-});
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify({ email: email })
+    })
+    .then(function() {
+        showSuccess();
+    })
+    .catch(function() {
+        // no-cors always resolves, but just in case
+        showSuccess();
+    });
 
+    function showSuccess() {
+        document.getElementById("emailInput").value = "";
+        btn.textContent = "You're in!";
 
-    .then(() => {
-        // نعرض رسالة نجاح داخل الصفحة بدل الـ alert
-        const successBox = document.createElement("div");
-        successBox.textContent = "✅ You're on the waitlist! Welcome to OneOne.";
-        successBox.style.backgroundColor = "#E3FCEC";
-        successBox.style.color = "#004F4F";
-        successBox.style.padding = "15px";
-        successBox.style.borderRadius = "8px";
-        successBox.style.marginTop = "15px";
-        successBox.style.fontWeight = "600";
-        successBox.style.transition = "opacity 0.3s ease";
+        var successBox = document.createElement("div");
+        successBox.className = "success-box";
+        successBox.textContent = "You're on the waitlist! Welcome to OneOne.";
         document.querySelector(".container").appendChild(successBox);
 
-        // تفريغ الحقل بعد الإرسال
-        document.getElementById("emailInput").value = "";
-
-        // إخفاء الرسالة بعد 4 ثواني
-        setTimeout(() => {
+        setTimeout(function() {
             successBox.style.opacity = "0";
-            setTimeout(() => successBox.remove(), 300);
+            setTimeout(function() { successBox.remove(); }, 300);
         }, 4000);
-    })
-    .catch((error) => {
-        console.error("Error:", error);
-        alert("⚠️ Something went wrong. Please try again.");
-    });
+    }
 }
 </script>
 
-
 </body>
 </html>
-
+       
+ 
 
    
        
