@@ -154,10 +154,11 @@ function submitEmail() {
 
     // إرسال الإيميل إلى Zapier Webhook
     fetch("https://hooks.zapier.com/hooks/catch/27472410/uvxw2rt/", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({ email: email })
-    })
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({ email: email })
+})
+
     .then(() => {
         // نعرض رسالة نجاح داخل الصفحة بدل الـ alert
         const successBox = document.createElement("div");
@@ -186,6 +187,7 @@ function submitEmail() {
     });
 }
 </script>
+
 
 </body>
 </html>
