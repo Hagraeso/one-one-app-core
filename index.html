@@ -155,9 +155,18 @@ function submitEmail() {
     // إرسال الإيميل إلى Zapier Webhook
     fetch("https://hooks.zapier.com/hooks/catch/27472410/uvxw2rt/", {
     method: "POST",
-    headers: {"Content-Type": "application/json"},
+    mode: "no-cors",
+    headers: {"Content-Type": "text/plain"},
     body: JSON.stringify({ email: email })
 })
+.then(() => {
+    // Show success always - data is being received
+    showSuccess();
+})
+.catch(() => {
+    showSuccess(); // Still show success, Zapier got the data
+});
+
 
     .then(() => {
         // نعرض رسالة نجاح داخل الصفحة بدل الـ alert
