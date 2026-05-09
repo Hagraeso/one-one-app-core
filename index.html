@@ -33,21 +33,21 @@
 
         /* Logo */
         .logo-img {
-            width: 140px;
+            width: 200px; /* ← تكبير اللوجو */
             height: auto;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         /* Headings */
         h1 {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 700;
             margin-bottom: 10px;
             color: var(--primary);
         }
 
         .subtitle {
-            font-size: 16px;
+            font-size: 17px;
             color: var(--subtext);
             margin-bottom: 30px;
         }
@@ -145,43 +145,37 @@
 
 <script>
 function submitEmail() {
-    const email = document.getElementById("emailInput").value;
+    const email = document.getElementById("emailInput").value.trim();
 
     if (!email) {
         alert("Please enter your email");
         return;
     }
 
-    function submitEmail() {
-    const email = document.getElementById("emailInput").value;
-
-    if (!email) {
-        alert("Please enter your email");
-        return;
-    }
-
+    // إرسال الإيميل إلى Zapier Webhook
     fetch("https://hooks.zapier.com/hooks/catch/27472410/uvxw2rt/", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({ email: email })
     })
-    .then(response => {
-        if (response.ok) {
-            alert("You're on the waitlist! 🎉");
-            document.getElementById("emailInput").value = "";
-        } else {
-            alert("Something went wrong. Try again.");
-        }
+    .then(() => {
+        // نعتبر العملية ناجحة بمجرد إرسال الطلب
+        alert("✅ You're on the waitlist! Welcome to OneOne.");
+        document.getElementById("emailInput").value = "";
     })
-    .catch(() => {
-        alert("Network error. Please try again later.");
+    .catch((error) => {
+        console.error("Error:", error);
+        alert("⚠️ Something went wrong. Please try again.");
     });
 }
-
 </script>
 
 </body>
 </html>
+
+
+   
+       
 
            
 
