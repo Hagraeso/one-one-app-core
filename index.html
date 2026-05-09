@@ -159,9 +159,26 @@ function submitEmail() {
         body: JSON.stringify({ email: email })
     })
     .then(() => {
-        // نعتبر العملية ناجحة بمجرد إرسال الطلب
-        alert("✅ You're on the waitlist! Welcome to OneOne.");
+        // نعرض رسالة نجاح داخل الصفحة بدل الـ alert
+        const successBox = document.createElement("div");
+        successBox.textContent = "✅ You're on the waitlist! Welcome to OneOne.";
+        successBox.style.backgroundColor = "#E3FCEC";
+        successBox.style.color = "#004F4F";
+        successBox.style.padding = "15px";
+        successBox.style.borderRadius = "8px";
+        successBox.style.marginTop = "15px";
+        successBox.style.fontWeight = "600";
+        successBox.style.transition = "opacity 0.3s ease";
+        document.querySelector(".container").appendChild(successBox);
+
+        // تفريغ الحقل بعد الإرسال
         document.getElementById("emailInput").value = "";
+
+        // إخفاء الرسالة بعد 4 ثواني
+        setTimeout(() => {
+            successBox.style.opacity = "0";
+            setTimeout(() => successBox.remove(), 300);
+        }, 4000);
     })
     .catch((error) => {
         console.error("Error:", error);
