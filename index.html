@@ -164,12 +164,11 @@ function submitEmail() {
     btn.disabled = true;
     btn.textContent = "Joining...";
 
-    fetch("https://hooks.zapier.com/hooks/catch/27472410/uvxw2rt/", {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "text/plain" },
-        body: JSON.stringify({ email: email })
-    })
+    fetch("https://hooks.zapier.com/hooks/catch/27472410/uvxw2rt/?email=" + encodeURIComponent(email), {
+    method: "POST",
+    mode: "no-cors"
+})
+
     .then(function() {
         showSuccess();
     })
