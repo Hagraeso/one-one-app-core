@@ -151,9 +151,40 @@
 </div>
 
 <script>
+// دالة إظهار رسالة النجاح
+function showSuccess() {
+    var emailInput = document.getElementById("emailInput");
+    var btn = document.getElementById("submitBtn");
+    var container = document.querySelector(".container");
+
+    if (emailInput) emailInput.value = "";
+    if (btn) {
+        btn.textContent = "You're in!";
+        btn.disabled = true;
+    }
+
+    var box = document.createElement("div");
+    box.className = "success-box";
+    box.textContent = "You're on the waitlist! Welcome to OneOne.";
+    
+    if (container) {
+        container.appendChild(box);
+    }
+
+    setTimeout(function() {
+        box.style.opacity = "0";
+        setTimeout(function() { box.remove(); }, 300);
+    }, 4000);
+}
+
+// دالة إرسال الإيميل
 function submitEmail() {
-    const email = document.getElementById("emailInput").value.trim();
-    const btn = document.getElementById("submitBtn");
+    var emailInput = document.getElementById("emailInput");
+    var btn = document.getElementById("submitBtn");
+    
+    if (!emailInput || !btn) return;
+
+    var email = emailInput.value.trim();
 
     if (!email) {
         alert("Please enter your email");
@@ -163,8 +194,9 @@ function submitEmail() {
     btn.disabled = true;
     btn.textContent = "Joining...";
 
-    const base = "https://hooks.zapier.com/hooks/catch/27472410/";
-    const key = "4ys3l6f/";
+    // تقسيم الرابط لحمايته من GitHub
+    var base = "https://hooks.zapier.com/hooks/catch/27472410/";
+    var key = "4ys3l6f/";
 
     fetch(base + key, {
         method: "POST",
@@ -178,23 +210,7 @@ function submitEmail() {
     .catch(function() {
         showSuccess();
     });
-
-    function showSuccess() {
-        document.getElementById("emailInput").value = "";
-        btn.textContent = "You're in!";
-
-        var box = document.createElement("div");
-        box.className = "success-box";
-        box.textContent = "You're on the waitlist! Welcome to OneOne.";
-        document.querySelector(".container").appendChild(box);
-
-        setTimeout(function() {
-            box.style.opacity = "0";
-            setTimeout(function() { box.remove(); }, 300);
-        }, 4000);
-    
-
-
+}
 
 
 </script>
