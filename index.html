@@ -173,7 +173,8 @@ btn.disabled = true;
 btn.textContent = "Joining...";
 
 function submitEmail() {
-    const email = document.getElementById("emailInput").value.trim();
+    const emailInput = document.getElementById("emailInput");
+    const email = emailInput.value.trim();
     const btn = document.getElementById("submitBtn");
 
     if (!email) {
@@ -189,47 +190,42 @@ function submitEmail() {
 
     fetch(base + key, {
         method: "POST",
-        mode: "no-cors",
+        mode: "no-cors", // ملاحظة: هذا النمط يمنع المتصفح من قراءة النتيجة لكن يرسل البيانات
         headers: { "Content-Type": "text/plain" },
         body: JSON.stringify({ email: email })
     })
     .then(function() {
-        showSuccess();
+        console.log("Success");
+        showSuccess(btn, emailInput);
     })
-    .catch(function() {
-        showSuccess();
+    .catch(function(err) {
+        console.log("Error but still showing success");
+        showSuccess(btn, emailInput);
     });
-
-    function showSuccess() {
-        document.getElementById("emailInput").value = "";
-        btn.textContent = "You're in!";
-
-        var box = document.createElement("div");
-        box.className = "success-box";
-        box.textContent = "You're on the waitlist! Welcome to OneOne.";
-        document.querySelector(".container").appendChild(box);
-
-        setTimeout(function() {
-            box.style.opacity = "0";
-            setTimeout(function() { box.remove(); }, 300);
-        }, 4000);
-    }
 }
 
-    function showSuccess() {
-        document.getElementById("emailInput").value = "";
-        btn.textContent = "You're in!";
+// انقل الدالة دي بره عشان تشتغل صح
+function showSuccess(btn, emailInput) {
+    emailInput.value = "";
+    btn.textContent = "You're in!";
+    btn.disabled = true; // نخليه معطل عشان ما يضغطش تاني
 
-        var successBox = document.createElement("div");
-        successBox.className = "success-box";
-        successBox.textContent = "You're on the waitlist! Welcome to OneOne.";
-        document.querySelector(".container").appendChild(successBox);
-
-        setTimeout(function() {
-            successBox.style.opacity = "0";
-            setTimeout(function() { successBox.remove(); }, 300);
-        }, 4000);
+    var box = document.createElement("div");
+    box.className = "success-box";
+    box.textContent = "You're on the waitlist! Welcome to OneOne.";
+    
+    // تأكد ان الـ container موجود فعلاً في الصفحة
+    const container = document.querySelector(".container");
+    if (container) {
+        container.appendChild(box);
     }
+
+    setTimeout(function() {
+        box.style.opacity = "0";
+        setTimeout(function() { box.remove(); }, 300);
+    }, 4000);
+}
+
 }
 </script>
 
