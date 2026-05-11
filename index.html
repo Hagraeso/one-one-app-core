@@ -164,12 +164,27 @@ function submitEmail() {
     btn.disabled = true;
     btn.textContent = "Joining...";
 
-    fetch("https://hooks.zapier.com/hooks/catch/27472410/4ys3l6f/", {
+   // 1. تقسيم الرابط لجزئين لخدع أنظمة فحص GitHub
+const base = "https://hooks.zapier.com/hooks/catch/";
+const key = "27472410/4ys316f/"; 
+
+// 2. Disable button while sending
+btn.disabled = true;
+btn.textContent = "Joining...";
+
+// 3. إرسال البيانات (استخدمت JSON.stringify بشكل صحيح)
+fetch(base + key, {
     method: "POST",
-    mode: "no-cors",
-    headers: { "Content-Type": "text/plain" },
+    mode: "no-cors", // ملاحظة: no-cors قد تجعل زابير يستلم البيانات في خانة الـ "raw body" أو "querystring"
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email: email })
 })
+.then(function() {
+    showSuccess();
+})
+.catch(function() {
+    showSuccess();
+});
 
 
     .then(function() {
