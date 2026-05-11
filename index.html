@@ -172,28 +172,49 @@ const key = "27472410/4ys316f/";
 btn.disabled = true;
 btn.textContent = "Joining...";
 
-// 3. إرسال البيانات (استخدمت JSON.stringify بشكل صحيح)
-fetch(base + key, {
-    method: "POST",
-    mode: "no-cors", // ملاحظة: no-cors قد تجعل زابير يستلم البيانات في خانة الـ "raw body" أو "querystring"
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email: email })
-})
-.then(function() {
-    showSuccess();
-})
-.catch(function() {
-    showSuccess();
-});
+function submitEmail() {
+    const email = document.getElementById("emailInput").value.trim();
+    const btn = document.getElementById("submitBtn");
 
+    if (!email) {
+        alert("Please enter your email");
+        return;
+    }
 
+    btn.disabled = true;
+    btn.textContent = "Joining...";
+
+    const base = "https://hooks.zapier.com/hooks/catch/27472410/";
+    const key = "uvxw2rt/";
+
+    fetch(base + key, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify({ email: email })
+    })
     .then(function() {
         showSuccess();
     })
     .catch(function() {
-        // no-cors always resolves, but just in case
         showSuccess();
     });
+
+    function showSuccess() {
+        document.getElementById("emailInput").value = "";
+        btn.textContent = "You're in!";
+
+        var box = document.createElement("div");
+        box.className = "success-box";
+        box.textContent = "You're on the waitlist! Welcome to OneOne.";
+        document.querySelector(".container").appendChild(box);
+
+        setTimeout(function() {
+            box.style.opacity = "0";
+            setTimeout(function() { box.remove(); }, 300);
+        }, 4000);
+    }
+}
 
     function showSuccess() {
         document.getElementById("emailInput").value = "";
