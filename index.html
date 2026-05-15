@@ -21,17 +21,18 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; -webkit-font-smoothing: antialiased; }
 
-```
+
 /* NAV */
 nav {
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; flex-direction: row; align-items: center; justify-content: space-between;
   padding: 16px 48px; position: sticky; top: 0;
   background: var(--bg); z-index: 100; border-bottom: 1px solid var(--border);
+  width: 100%; box-sizing: border-box;
 }
 .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .nav-logo img { height: 36px; width: auto; object-fit: contain; }
 .nav-name { font-size: 16px; font-weight: 500; color: var(--text); }
-.nav-right { display: flex; align-items: center; }
+.nav-right { display: flex; align-items: center; flex-shrink: 0; }
 .nav-btn {
   background: var(--teal); color: white; border: none;
   padding: 10px 22px; border-radius: 100px; font-size: 14px;
@@ -177,7 +178,7 @@ footer {
   .features-grid { grid-template-columns: 1fr; }
   footer { flex-direction: column; gap: 16px; text-align: center; padding: 20px 24px; }
 }
-```
+
 
   </style>
 </head>
@@ -200,7 +201,7 @@ footer {
     <p class="hero-sub">In a noisy world, OneOne invites you to share one meaningful moment each day.</p>
     <p class="hero-tag">Pause. Reflect. Share what truly matters.</p>
 
-```
+
 <div class="form-wrap" id="waitlist">
   <div class="form-row">
     <input type="email" id="emailInput" class="email-in" placeholder="you@example.com">
@@ -209,7 +210,7 @@ footer {
   <p class="form-note">Be among the first to shape this.</p>
   <div class="success" id="successMsg">✓ &nbsp;You're on the waitlist! Welcome to OneOne.</div>
 </div>
-```
+
 
   </div>
 
@@ -310,3 +311,4 @@ footer {
 
 </body>
 </html>
+   
